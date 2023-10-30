@@ -1,10 +1,12 @@
 import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { LoggingService } from '../services/logging.serviice';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  encapsulation : ViewEncapsulation.None
+  encapsulation : ViewEncapsulation.None,
+  providers:[LoggingService]
 })
 export class UsersComponent implements OnInit {
   @ViewChild('paragraphUserName') paragraphUserName :ElementRef;
@@ -12,7 +14,7 @@ export class UsersComponent implements OnInit {
   userName: string = '';
   value =10;
   usersList = ['Raudra'];
-  constructor(){
+  constructor(private loggingService : LoggingService){
     console.log('Constructor USERS called')
    
   }
@@ -30,6 +32,8 @@ export class UsersComponent implements OnInit {
   onNameChanged(){
     this.name = 'Raudra Updated name'
     console.log(this.paragraphUserName.nativeElement.innerText)
+    
+    this.loggingService.logToConsole('Called from Service' +this.name);
   }
 
   onDelete(){

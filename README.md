@@ -24,3 +24,4 @@ ngOnDestroy: Called once when the component is destroyed and a good hook to use 
 14. Using HostBinding Decorator to bind the Properties for the Directive element in the Angular.
 15. Create Custom Structural Directive in the Angular using TemplateRef and ViewContainerRef (skip)
 16. How to use ngSwitch, ngSwitchCase, ngSwitchDefault Directive in the Angular Template.
+17. Services Introduction. Create a Simple Service and use the service in Components in Angular.
